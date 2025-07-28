@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Show Game Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎮 Quiz Show Game - Complete Documentation</h1>
+
+    <h2>📋 Table of Contents</h2>
+    <ol>
+        <li><a href="#overview">Project Overview</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#gameplay">Gameplay</a></li>
+        <li><a href="#architecture">Technical Architecture</a></li>
+        <li><a href="#customization">Customization</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#license">License</a></li>
+    </ol>
+
+    <h2 id="overview">🌟 Project Overview</h2>
+    <p>Real-time multiplayer quiz game with buzzer system built with:</p>
+    <?xml version="1.0" encoding="UTF-8"?>
+       <svg xmlns:xlink="http://www.w3.org/1999/xlink" aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="0 0 185.3999786376953 382" style="max-width: 200px" class="flowchart" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-svg-5" height="100%"><style>#mermaid-svg-5{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#ccc;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-svg-5 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-svg-5 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-svg-5 .error-icon{fill:#a44141;}#mermaid-svg-5 .error-text{fill:#ddd;stroke:#ddd;}#mermaid-svg-5 .edge-thickness-normal{stroke-width:1px;}#mermaid-svg-5 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-5 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-5 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-svg-5 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-5 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-5 .marker{fill:lightgrey;stroke:lightgrey;}#mermaid-svg-5 .marker.cross{stroke:lightgrey;}#mermaid-svg-5 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-5 p{margin:0;}#mermaid-svg-5 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#ccc;}#mermaid-svg-5 .cluster-label text{fill:#F9FFFE;}#mermaid-svg-5 .cluster-label span{color:#F9FFFE;}#mermaid-svg-5 .cluster-label span p{background-color:transparent;}#mermaid-svg-5 .label text,#mermaid-svg-5 span{fill:#ccc;color:#ccc;}#mermaid-svg-5 .node rect,#mermaid-svg-5 .node circle,#mermaid-svg-5 .node ellipse,#mermaid-svg-5 .node polygon,#mermaid-svg-5 .node path{fill:#1f2020;stroke:#ccc;stroke-width:1px;}#mermaid-svg-5 .rough-node .label text,#mermaid-svg-5 .node .label text,#mermaid-svg-5 .image-shape .label,#mermaid-svg-5 .icon-shape .label{text-anchor:middle;}#mermaid-svg-5 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-svg-5 .rough-node .label,#mermaid-svg-5 .node .label,#mermaid-svg-5 .image-shape .label,#mermaid-svg-5 .icon-shape .label{text-align:center;}#mermaid-svg-5 .node.clickable{cursor:pointer;}#mermaid-svg-5 .root .anchor path{fill:lightgrey!important;stroke-width:0;stroke:lightgrey;}#mermaid-svg-5 .arrowheadPath{fill:lightgrey;}#mermaid-svg-5 .edgePath .path{stroke:lightgrey;stroke-width:2.0px;}#mermaid-svg-5 .flowchart-link{stroke:lightgrey;fill:none;}#mermaid-svg-5 .edgeLabel{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaid-svg-5 .edgeLabel p{background-color:hsl(0, 0%, 34.4117647059%);}#mermaid-svg-5 .edgeLabel rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaid-svg-5 .labelBkg{background-color:rgba(87.75, 87.75, 87.75, 0.5);}#mermaid-svg-5 .cluster rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:rgba(255, 255, 255, 0.25);stroke-width:1px;}#mermaid-svg-5 .cluster text{fill:#F9FFFE;}#mermaid-svg-5 .cluster span{color:#F9FFFE;}#mermaid-svg-5 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(20, 1.5873015873%, 12.3529411765%);border:1px solid rgba(255, 255, 255, 0.25);border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-5 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#ccc;}#mermaid-svg-5 rect.text{fill:none;stroke-width:0;}#mermaid-svg-5 .icon-shape,#mermaid-svg-5 .image-shape{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaid-svg-5 .icon-shape p,#mermaid-svg-5 .image-shape p{background-color:hsl(0, 0%, 34.4117647059%);padding:2px;}#mermaid-svg-5 .icon-shape rect,#mermaid-svg-5 .image-shape rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaid-svg-5 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker orient="auto" markerHeight="8" markerWidth="8" markerUnits="userSpaceOnUse" refY="5" refX="5" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-svg-5_flowchart-v2-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="8" markerWidth="8" markerUnits="userSpaceOnUse" refY="5" refX="4.5" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-svg-5_flowchart-v2-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-svg-5_flowchart-v2-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-svg-5_flowchart-v2-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-svg-5_flowchart-v2-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-svg-5_flowchart-v2-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#mermaid-svg-5_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_A_B_0" d="M92.7,62L92.7,66.167C92.7,70.333,92.7,78.667,92.7,86.333C92.7,94,92.7,101,92.7,104.5L92.7,108"></path><path marker-end="url(#mermaid-svg-5_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_B_C_0" d="M92.7,166L92.7,170.167C92.7,174.333,92.7,182.667,92.7,190.333C92.7,198,92.7,205,92.7,208.5L92.7,212"></path><path marker-end="url(#mermaid-svg-5_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_C_D_0" d="M92.7,270L92.7,274.167C92.7,278.333,92.7,286.667,92.7,294.333C92.7,302,92.7,309,92.7,312.5L92.7,316"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g transform="translate(92.69998931884766, 35)" id="flowchart-A-0" class="node default"><rect height="54" width="164.89998626708984" y="-27" x="-82.44999313354492" style="" class="basic label-container"></rect><g transform="translate(-52.44999313354492, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="104.89998626708984"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Node.js Server</p></span></div></foreignObject></g></g><g transform="translate(92.69998931884766, 139)" id="flowchart-B-1" class="node default"><rect height="54" width="126.3699951171875" y="-27" x="-63.18499755859375" style="" class="basic label-container"></rect><g transform="translate(-33.18499755859375, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="66.3699951171875"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Socket.io</p></span></div></foreignObject></g></g><g transform="translate(92.69998931884766, 243)" id="flowchart-C-3" class="node default"><rect height="54" width="144.5" y="-27" x="-72.25" style="" class="basic label-container"></rect><g transform="translate(-42.25, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="84.5"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Web Clients</p></span></div></foreignObject></g></g><g transform="translate(92.69998931884766, 347)" id="flowchart-D-5" class="node default"><rect height="54" width="169.39998626708984" y="-27" x="-84.69999313354492" style="" class="basic label-container"></rect><g transform="translate(-54.69999313354492, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="109.39998626708984"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel"><p>Materialize CSS</p></span></div></foreignObject></g></g></g></g></g></svg>
+
+    <h2 id="features">🚀 Features</h2>
+    <ul>
+        <li><strong>Real-time Buzzer</strong> <span class="emoji">🎛️</span></li>
+        <li><strong>Interactive Chat</strong> <span class="emoji">💬</span></li>
+        <li><strong>Score Tracking</strong> <span class="emoji">📊</span></li>
+        <li><strong>Sound Effects</strong> <span class="emoji">🔊</span></li>
+        <li><strong>Responsive Design</strong> <span class="emoji">📱</span></li>
+    </ul>
+
+    <h2 id="installation">🛠️ Installation</h2>
+    <h3>Requirements</h3>
+    <ul>
+        <li>Node.js 14+</li>
+        <li>npm 6+</li>
+    </ul>
+
+    <h3>Steps</h3>
+    <pre><code># 1. Clone repository
+git clone https://github.com/your-repo/quiz-show.git
+cd quiz-show
+
+# 2. Install dependencies
+npm install
+
+# 3. Add sound files (optional)
+mkdir -p public/sounds
+cp path/to/sounds/* public/sounds/
+
+# 4. Start server
+node server.js</code></pre>
+
+    <h2 id="gameplay">🎮 Gameplay</h2>
+    <h3>1. Player Login</h3>
+    <p>Enter username to join lobby</p>
+    <p><em>Image placeholder: Login Screen</em></p>
+
+    <h3>2. Buzzer Round</h3>
+    <ul>
+        <li>First to buzz answers</li>
+        <li>15 second time limit</li>
+    </ul>
+    <pre><code>function buzz() {
+    socket.emit('buzz');
+}</code></pre>
+
+    <h3>3. Scoring</h3>
+    <table>
+        <tr>
+            <th>Outcome</th>
+            <th>Points</th>
+        </tr>
+        <tr>
+            <td>Correct</td>
+            <td>+1</td>
+        </tr>
+        <tr>
+            <td>Wrong</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <h2 id="architecture">🖥️ Technical Architecture</h2>
+    <h3>File Structure</h3>
+    <pre>/public
+  /sounds
+  client.js
+  style.css
+/questions.json
+/server.js
+/index.html</pre>
+
+    <h2 id="customization">🎨 Customization</h2>
+    <h3>Change Questions</h3>
+    <p>Edit <code>questions.json</code>:</p>
+    <pre><code>[
+    {
+        "question": "Your question here?",
+        "answer": "Correct answer"
+    }
+]</code></pre>
+
+    <h2 id="troubleshooting">🐛 Troubleshooting</h2>
+    <table>
+        <tr>
+            <th>Issue</th>
+            <th>Solution</th>
+        </tr>
+        <tr>
+            <td>Connection fails</td>
+            <td>Ensure server is running</td>
+        </tr>
+        <tr>
+            <td>Sounds not playing</td>
+            <td>Check browser console for errors</td>
+        </tr>
+        <tr>
+            <td>Mobile display issues</td>
+            <td>Add viewport meta tag</td>
+        </tr>
+    </table>
+
+    <h2 id="license">📜 License</h2>
+    <p>MIT License - Free for personal and educational use</p>
+</body>
+</html>

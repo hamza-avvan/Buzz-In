@@ -1,0 +1,13 @@
+[
+    { "question": "Capital of Italy?", "answer": "Rome" },
+    { "question": "5 + 7?", "answer": "12" },
+    { "question": "Sun rises from?", "answer": "East" },
+    { "question": "HTML stands for?", "answer": "HyperText Markup Language" },
+    { "question": "2 x 6?", "answer": "12" },
+    { "question": "Color of the sky?", "answer": "Blue" },
+    { "question": "JS stands for?", "answer": "JavaScript" },
+    { "question": "Largest planet?", "answer": "Jupiter" },
+    { "question": "H2O is?", "answer": "Water" },
+    { "question": "First letter of alphabet?", "answer": "A" }
+  ]
+  

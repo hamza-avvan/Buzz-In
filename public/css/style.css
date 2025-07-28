@@ -1,0 +1,214 @@
+body {
+    background-color: #f5f7fa;
+    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .chat-box {
+    height: 312px;
+    overflow-y: auto;
+    background: #eceff1;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .chat-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .chat-message img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  .chat-content {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  #buzzBtn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  #answerArea {
+    margin-top: 1rem;
+  }
+
+  #gameArea {
+    display: none;
+  }
+
+  .input-field input {
+    margin-bottom: 0;
+  }
+
+  #loginArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  #loginArea .card {
+    box-shadow: 0px 0px 28px -17px #666;
+  }
+
+  #loginArea, #loginArea .card {
+    /* width: 62% !important; */
+    padding: 65px;
+  }
+  /* Position the icon button inside the input field */
+  .input-field {
+    position: relative;
+  }
+
+  .emoji-btn {
+    margin-right: 35px !important;
+  }
+
+  /* Style the send icon button */
+  .input-style-btn {
+    position: absolute;
+    padding: 0;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #2196f3; /* blue color */
+    font-size: 1.5rem;
+    outline: none;
+  }
+
+/* Add these to the end of style.css */
+
+.main-container > div {
+    /* display: flex; */
+    /* gap: 20px; */
+  }
+  
+  #gameArea {
+    margin-right: 10px !important;
+    flex: 2;
+  }
+  
+  .player-stats {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+  }
+  
+  .player-stats.opponent {
+    background-color: #e3f2fd;
+  }
+  
+  .player-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .stats-grid div:nth-child(odd) {
+    font-weight: bold;
+  }
+  
+  .stats-grid div:nth-child(even) {
+    text-align: right;
+  }
+  
+  /* Adjust the existing #gameArea styles */
+  #gameArea {
+    display: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  #statsArea {
+    display: none;
+    padding: 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .bold {
+    font-weight: bold;
+    text-align: left !important;
+  }
+
+/* Add these styles to your existing chat-message rules */
+.chat-message {
+    display: flex;
+    margin-bottom: 10px;
+    max-width: 80%;
+  }
+  
+  /* Our messages (right-aligned) */
+  .chat-message.ours {
+    margin-left: auto;
+    flex-direction: row-reverse;
+  }
+  
+  /* Their messages (left-aligned) */
+  .chat-message.theirs {
+    margin-right: auto;
+  }
+  
+  .chat-content {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 18px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    word-break: break-word;
+  }
+  
+  /* Style our messages differently */
+  .chat-message.ours .chat-content {
+    background: #dcf8c6; /* Light green like WhatsApp */
+    border-top-right-radius: 0;
+  }
+  
+  /* Style their messages differently */
+  .chat-message.theirs .chat-content {
+    background: #ffffff;
+    border-top-left-radius: 0;
+  }
+  
+  /* Avatar positioning */
+  .chat-message.ours img {
+    margin-left: 8px;
+  }
+  .chat-message.theirs img {
+    margin-right: 8px;
+  }
