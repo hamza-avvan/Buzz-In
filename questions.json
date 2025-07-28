@@ -8,6 +8,58 @@
     { "question": "JS stands for?", "answer": "JavaScript" },
     { "question": "Largest planet?", "answer": "Jupiter" },
     { "question": "H2O is?", "answer": "Water" },
-    { "question": "First letter of alphabet?", "answer": "A" }
+    { "question": "First letter of alphabet?", "answer": "A" },
+    {
+      "question": "What does XSS stand for in web security?",
+      "answer": "Cross-Site Scripting"
+    },
+    {
+      "question": "Which HTML tag is most commonly associated with XSS attacks?",
+      "answer": "<script>"
+    },
+    {
+      "question": "What character should you always escape to prevent XSS when displaying user input?",
+      "answer": "<"
+    },
+    {
+      "question": "Which JavaScript method is unsafe for inserting HTML as it can lead to XSS vulnerabilities?",
+      "answer": "innerHTML"
+    },
+    {
+      "question": "What type of XSS attack stores malicious code on the server?",
+      "answer": "Stored XSS"
+    },
+    {
+      "question": "Which Content Security Policy (CSP) directive helps prevent XSS by restricting script sources?",
+      "answer": "script-src"
+    },
+    {
+      "question": "What attribute should you use instead of onclick to help prevent XSS?",
+      "answer": "addEventListener"
+    },
+    {
+      "question": "Which character is commonly used to break out of HTML attributes in XSS attacks?",
+      "answer": "\""
+    },
+    {
+      "question": "What type of XSS appears immediately in the page response without being stored?",
+      "answer": "Reflected XSS"
+    },
+    {
+      "question": "Which JavaScript method is safer than innerHTML for text content?",
+      "answer": "textContent"
+    },
+    {
+      "question": "What DOM-based XSS mitigation technique involves validating input against a whitelist?",
+      "answer": "Input validation"
+    },
+    {
+      "question": "Which modern web framework automatically escapes content to prevent XSS by default?",
+      "answer": "React"
+    },
+    {
+      "question": "What special header helps browsers detect and stop reflected XSS attacks?",
+      "answer": "X-XSS-Protection"
+    }
   ]
   
