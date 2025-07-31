@@ -4,14 +4,15 @@
 📋 Table of Contents
 --------------------
 
-1.  [Project Overview](#overview)
-2.  [Features](#features)
-3.  [Installation](#installation)
-4.  [Gameplay](#gameplay)
-5.  [Technical Architecture](#architecture)
-6.  [Customization](#customization)
-7.  [Troubleshooting](#troubleshooting)
-8.  [License](#license)
+1.  [Project Overview](#-project-overview)
+2.  [Features](#-features)
+3.  [Installation](#-installation)
+4.  [Gameplay](#-gameplay)
+5.  [Technical Architecture](#-architecture)
+6.  [Customization](#-customization)
+7.  [Troubleshooting](#-troubleshooting)
+8.  [License](#-license)
+9.  [Documentaiton](https://html-preview.github.io/?url=https://github.com/hamza-avvan/Buzz-In/blob/main/docs/README.html)
 
 🌟 Project Overview
 -------------------
