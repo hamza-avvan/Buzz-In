@@ -76,8 +76,7 @@
             <div class="divider"></div>
             
             <div class="tip-box">
-                <i class="material-icons">lightbulb_outline</i>
-                <p><strong>Pro Tip:</strong> The faster you buzz, the better your chances - but make sure you actually know the answer!</p>
+                <p><strong><i class="material-icons">lightbulb_outline</i> Pro Tip:</strong> The faster you buzz, the better your chances - but make sure you actually know the answer!</p>
             </div>
         </div>
         <div class="modal-footer">
@@ -89,7 +88,11 @@
         <h6 id="status" class="center-align"></h6>
         <h5 id="question" class="center-align"></h5>
 
-        <button id="buzzBtn" class="btn waves-effect waves-light green">Buzz!</button>
+        <button id="buzzBtn" onclick="buzz()" class="btn hide-on-small-only waves-effect waves-light green">Buzz!</button>
+        
+        <div class="fixed-action-btn hide-on-med-and-up" style="left: 80px;bottom: 20px;bottom: 23px;width: 286px;">
+            <button onclick="buzz()" style="width: 100%;" class="btn show-on-small-only waves-effect waves-light green">Buzz!</button>
+        </div>
 
         <div id="answerArea" class="input-field" style="display:none;">
             <input type="text" id="answerInput" onkeypress="submitAnswerOnEnter(event)" placeholder="Your answer" />
@@ -200,7 +203,7 @@
                     title="Leave Game" aria-label="Leave Game">
             <i class="material-icons">exit_to_app</i> Leave Game
         </button>
-         <div class="fixed-action-btn" style="left: 23px; bottom: 23px;width: 100px;">
+         <div class="fixed-action-btn" style="left: 5px;bottom: 20px; bottom: 23px;width: 100px;">
             <a class="btn-floating waves-effect waves-light blue modal-trigger" href="#modal1"><i class="material-icons">help_outline</i></a>
           </div>
 

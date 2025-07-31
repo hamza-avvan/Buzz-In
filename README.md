@@ -28,6 +28,8 @@ Real-time multiplayer quiz game with buzzer system built with:
 *   **Score Tracking** 📊
 *   **Sound Effects** 🔊
 *   **Responsive Design** 📱
+*   **DiceBear API Avatars** 👤
+
 
 🛠️ Installation
 ----------------

@@ -190,7 +190,7 @@ socket.on("gameOver", (data) => {
 });
 
 // Buzz button click
-document.getElementById("buzzBtn").onclick = () => {
+function buzz() {
   if (!buzzed) {
     socket.emit("buzz");
     buzzed = true;
