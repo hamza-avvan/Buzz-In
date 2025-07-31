@@ -1,5 +1,5 @@
-🎮 Quiz Show Game - Complete Documentation
-==========================================
+🎮 Quiz Show Game 
+==================
 
 📋 Table of Contents
 --------------------
