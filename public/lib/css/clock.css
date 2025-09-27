@@ -1,0 +1,288 @@
+html, body {
+    height: 100%;
+  }
+  
+  
+  .watch {
+    width: 150px;
+    height: 150px;
+    background: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 7px solid #111;
+  }
+  .watch--hour {
+    width: 5px;
+    height: 65px;
+    border-radius: 10px;
+    transform-origin: center 65px;
+    transform: rotate(0deg);
+    position: absolute;
+    background: #111;
+    left: calc(50% - 2.5px);
+    top: calc(50% - 63px);
+  }
+  .watch--min {
+    width: 5px;
+    height: 80px;
+    border-radius: 10px;
+    transform-origin: center 90px;
+    transform: rotate(0deg);
+    position: absolute;
+    background: #333;
+    left: calc(50% - 2.5px);
+    top: calc(50% - 120px);
+  }
+  .watch--sec {
+    width: 5px;
+    height: 130px;
+    border-radius: 10px;
+    transform-origin: center 100px;
+    transform: rotate(0deg);
+    position: absolute;
+    background: #666;
+    left: calc(50% - 2.5px);
+    top: calc(50% - 100px);
+  }
+  .watch--center {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    left: calc(50% - 7px);
+    top: calc(50% - 7px);
+    border: 2px solid #ddd;
+  }
+  
+  .day {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    background: #789abc;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  .day.active {
+    opacity: 1;
+  }
+  .day--sun {
+    width: 60px;
+    height: 60px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    left: 60px;
+    top: 35px;
+  }
+  .day--clouds {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #ddd;
+    border-radius: 50%;
+    left: 110px;
+    top: 35px;
+  }
+  .day--clouds::after {
+    content: "";
+    width: 40px;
+    position: absolute;
+    height: 40px;
+    background: #ddd;
+    left: 30px;
+    top: 10px;
+    border-radius: 50%;
+  }
+  .day--clouds::before {
+    content: "";
+    width: 25px;
+    position: absolute;
+    height: 25px;
+    background: #ddd;
+    left: -10px;
+    top: 20px;
+    border-radius: 50%;
+  }
+  .day--ground {
+    position: absolute;
+    width: 220px;
+    height: 70px;
+    background: linear-gradient(180deg, #009900, #006600);
+    bottom: 0;
+  }
+  .day .tree {
+    position: absolute;
+    width: 6px;
+    height: 30px;
+  }
+  .day--tree-one, .day--tree-four, .day--tree-three, .day--tree-two {
+    left: 60px;
+    bottom: 50px;
+    background: #663300;
+  }
+  .day--tree-one::before, .day--tree-four::before, .day--tree-three::before, .day--tree-two::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background: green;
+    bottom: 25px;
+    left: -7px;
+    border-radius: 30px;
+  }
+  .day--tree-two {
+    left: 100px;
+    bottom: 40px;
+    transform: scale(1.2);
+  }
+  .day--tree-three {
+    left: 140px;
+    bottom: 60px;
+    transform: scale(0.9);
+  }
+  .day--tree-four {
+    left: 168px;
+    bottom: 40px;
+    transform: scale(1.3);
+  }
+  
+  .night {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    background: #234567;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  .night.active {
+    opacity: 1;
+  }
+  .night--moon {
+    width: 60px;
+    height: 60px;
+    background: #bbb;
+    border-radius: 50%;
+    position: absolute;
+    left: 60px;
+    top: 35px;
+  }
+  .night--moon::before {
+    content: "";
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    height: 50px;
+    background: #234567;
+  }
+  .night--clouds {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    left: 110px;
+    top: 35px;
+  }
+  .night--clouds::after {
+    content: "";
+    width: 40px;
+    position: absolute;
+    height: 40px;
+    background: #fff;
+    left: 30px;
+    top: 10px;
+    border-radius: 50%;
+  }
+  .night--clouds::before {
+    content: "";
+    width: 25px;
+    position: absolute;
+    height: 25px;
+    background: #fff;
+    left: -10px;
+    top: 20px;
+    border-radius: 50%;
+  }
+  .night--ground {
+    position: absolute;
+    width: 220px;
+    height: 90px;
+    background: #114411;
+    bottom: 0;
+  }
+  
+  .watch-wrap {
+    position: absolute;
+    right: 110px;
+    top: 80px;
+  }
+  
+  .numbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .numbers:hover .numbers--12 {
+    top: -50px;
+    opacity: 1;
+  }
+  .numbers:hover .numbers--3 {
+    right: -28px;
+    opacity: 1;
+  }
+  .numbers:hover .numbers--6 {
+    bottom: -50px;
+    opacity: 1;
+  }
+  .numbers:hover .numbers--9 {
+    left: -28px;
+    opacity: 1;
+  }
+  .numbers .num {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    font-size: 42px;
+    opacity: 0;
+    z-index: -1;
+  }
+  .numbers--12 {
+    top: 0px;
+    left: 50%;
+    transition: all 300ms ease;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  .numbers--3 {
+    right: 0;
+    bottom: 50%;
+    transition: all 300ms ease;
+    transform: translateY(50%);
+    transition-delay: 100ms;
+    opacity: 0;
+  }
+  .numbers--6 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 300ms ease;
+    transition-delay: 200ms;
+    opacity: 0;
+  }
+  .numbers--9 {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 300ms ease;
+    transition-delay: 300ms;
+    opacity: 0;
+  }

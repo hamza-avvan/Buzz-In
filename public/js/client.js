@@ -170,11 +170,11 @@ socket.on("newQuestion", (data) => {
 
 // Someone buzzed in
 socket.on("buzzed", (name) => {
-  document.getElementById("result").innerText = `${name} buzzed!`;
+  document.getElementById("result").innerText = `${(name!=currentUsername ? `${name} buzzed!` : "🎉You buzzed first!")}`;
 
   if (name != currentUsername) {
     playBuzzSound()
-    M.toast({ html: `<b>${name}</b>  buzzed before you. Better luck next time`, classes: "orange" })
+    M.toast({ html: `<strong>${name}</strong> buzzed before you. Better luck next time`, classes: "orange" })
   }
 });
 
@@ -260,6 +260,10 @@ function playBuzzSound() {
     sound.currentTime = 0;
     sound.play().catch(e => console.log("Audio play failed:", e));
 }
+
+window.onbeforeunload = function() {
+  return "You'll lose the session and the match, are you sure?";
+};
 
 // Emoji Picker Initialization
 // const picker = new EmojiButton({

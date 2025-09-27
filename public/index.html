@@ -13,12 +13,15 @@
   <!-- Emoji Button Library -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="lib/css/emoji.css" rel="stylesheet">
+<link href="lib/css/clock.css" rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="lib/js/config.min.js"></script>
 <script src="lib/js/util.min.js"></script>
 <script src="lib/js/jquery.emojiarea.min.js"></script>
 <script src="lib/js/emoji-picker.min.js"></script>
+
+<script src="lib/js/clock.js"></script>
 
 <link href="css/style.css" rel="stylesheet">
   <script src="/socket.io/socket.io.js"></script>
@@ -27,105 +30,133 @@
 </head>
 <body>
 
-  <!-- Login Area -->
- <div id="loginArea" class="container main-container">
-    <div class="card white z-depth-2">
-        <h4 class="center-align">🎉 Welcome to Quiz Show</h4>
-        <div class="input-field">
-        <input type="text" autofocus id="username" onkeydown="loginOnEnter(event)">
-        <label for="username">Enter your name</label>
-        <!-- Send icon button -->
-        <button class="btn-flat input-style-btn" style="color: #26a69a;" onclick="login()" aria-label="Send" title="Send">
-            <i class="material-icons">send</i>
-        </button>
+    <!-- Login Area -->
+    <div id="loginArea" class="container main-container">
+        <div class="card white z-depth-2">
+            <h4 class="center-align">🎉 Welcome to Quiz Show</h4>
+            <div class="input-field">
+            <input type="text" autofocus id="username" onkeydown="loginOnEnter(event)">
+            <label for="username">Enter your name</label>
+            <!-- Send icon button -->
+            <button class="btn-flat input-style-btn" style="color: #26a69a;" onclick="login()" aria-label="Send" title="Send">
+                <i class="material-icons">send</i>
+            </button>
+            </div>
         </div>
     </div>
-</div>
 
   <!-- Game Area -->
-  <div class="row container main-container">
+  <div class="row container main-container"> 
+
     <div class="col s12 m7 l7 xl7" id="gameArea" >
-        
+        <div class="watch-wrap">
+            <div class="watch">
+              <div class="watch--inner"></div>
+              <div class="watch--day day">
+                <div class="day--sun"></div>
+                <div class="day--clouds"></div>
+                <div class="day--ground"></div>
+                <div class="day--tree-one tree"></div>
+                <div class="day--tree-two tree"></div>
+                <div class="day--tree-three tree"></div>
+                <div class="day--tree-four tree"></div>
+              </div>
+              <div class="watch--night night">
+                <div class="night--moon"></div>
+                <div class="night--clouds"></div>
+              </div>
+              <div class="watch--hour"></div>
+              <div class="watch--min"></div>
+              <div class="watch--sec"></div>
+              <div class="watch--center"></div>
+            </div>
+            <div class="watch--numbers numbers">
+              <div class="num numbers--12">12</div>
+              <div class="num numbers--3">3</div>
+              <div class="num numbers--6">6</div>
+              <div class="num numbers--9">9</div>
+            </div>
+        </div> 
     
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>Quiz Show Rules</h4>
-            <div class="divider"></div>
-                <ul class="browser-default">
-                <li>🏆 <strong>First to 6 correct answers wins</strong> (out of 10 questions)</li>
-                <li>🔔 <strong>Buzz in</strong> by clicking the Buzz button when you know the answer</li>
-                <li>⚡ <strong>Fast fingers win!</strong> Only the first buzz gets to answer</li>
-                <li>💬 <strong>Chat freely</strong> with your opponent during the game</li>
-                <li>❌ <strong>Wrong answers</strong> give the other player the next question</li>
-                <li>⏱️ <strong>Answer quickly</strong> - you have limited time after buzzing</li>
-                </ul>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Quiz Show Rules</h4>
                 <div class="divider"></div>
-                <h5>Scoring</h5>
-                <ul class="browser-default">
-                <li>✅ <strong>Correct answer:</strong> +1 point</li>
-                <li>❌ <strong>Wrong answer:</strong> 0 points</li>
-                <li>🏅 <strong>Tiebreaker:</strong> Most points after 10 questions wins</li>
-                </ul>
-        
-            <div class="section">
-                <h5><i class="material-icons">forum</i> Chat Features</h5>
-                <p>Between questions, feel free to chat with your opponent using the message box below the game. Keep it friendly!</p>
-            </div>
-        
-            <div class="divider"></div>
+                    <ul class="browser-default">
+                    <li>🏆 <strong>First to 6 correct answers wins</strong> (out of 10 questions)</li>
+                    <li>🔔 <strong>Buzz in</strong> by clicking the Buzz button when you know the answer</li>
+                    <li>⚡ <strong>Fast fingers win!</strong> Only the first buzz gets to answer</li>
+                    <li>💬 <strong>Chat freely</strong> with your opponent during the game</li>
+                    <li>❌ <strong>Wrong answers</strong> give the other player the next question</li>
+                    <li>⏱️ <strong>Answer quickly</strong> - you have limited time after buzzing</li>
+                    </ul>
+                    <div class="divider"></div>
+                    <h5>Scoring</h5>
+                    <ul class="browser-default">
+                    <li>✅ <strong>Correct answer:</strong> +1 point</li>
+                    <li>❌ <strong>Wrong answer:</strong> 0 points</li>
+                    <li>🏅 <strong>Tiebreaker:</strong> Most points after 10 questions wins</li>
+                    </ul>
             
-            <div class="tip-box">
-                <p><strong><i class="material-icons">lightbulb_outline</i> Pro Tip:</strong> The faster you buzz, the better your chances - but make sure you actually know the answer!</p>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
-    </div>
-
-    <div class="card white z-depth-2">
-        <h6 id="status" class="center-align"></h6>
-        <h5 id="question" class="center-align"></h5>
-
-        <button id="buzzBtn" onclick="buzz()" class="btn hide-on-small-only waves-effect waves-light green">Buzz!</button>
-        
-        <div class="fixed-action-btn hide-on-med-and-up" style="left: 80px;bottom: 20px;bottom: 23px;width: 286px;">
-            <button onclick="buzz()" style="width: 100%;" class="btn show-on-small-only waves-effect waves-light green">Buzz!</button>
-        </div>
-
-        <div id="answerArea" class="input-field" style="display:none;">
-            <input type="text" id="answerInput" onkeypress="submitAnswerOnEnter(event)" placeholder="Your answer" />
-            <button class="btn-flat input-style-btn" onclick="submitAnswer()" id="" style="margin: 0;">
-                <i class="material-icons" style="color: orange;">send</i>
-            </button>
-        </div>
-
-        <p id="result" class="center-align red-text"></p>
-
-        <!-- Chat UI -->
-        <div class="chat-box" id="chatBox"></div>
-
-        <!-- Chat Input with Emoji -->
-            <div class="send-chat">
-                <div class="input-field">
-                    <input type="text" id="chatInput" onkeypress="sendMessageOnEnter(event)">
-                    <label for="chatInput" class="">Say something...</label>
-
-                    <!-- Emoji Picker Trigger -->
-                    <div class="emoji-picker-container">
-                        <input type="text" data-emojiable="true" class="hide">
-                    </div>
-                    <button class="btn-flat input-style-btn emoji-btn" id="" title="Add emoji" style="margin: 0;">
-                    <i class="material-icons">emoji_emotions</i>
-                    </button>
-                    <!-- Send icon button -->
-                    <button class="btn-flat input-style-btn sendmsg" onclick="sendChat()" aria-label="Send" title="Send">
-                        <i class="material-icons">send</i>
-                    </button>
+                <div class="section">
+                    <h5><i class="material-icons">forum</i> Chat Features</h5>
+                    <p>Between questions, feel free to chat with your opponent using the message box below the game. Keep it friendly!</p>
+                </div>
+            
+                <div class="divider"></div>
+                
+                <div class="tip-box">
+                    <p><strong><i class="material-icons">lightbulb_outline</i> Pro Tip:</strong> The faster you buzz, the better your chances - but make sure you actually know the answer!</p>
                 </div>
             </div>
-    
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
+        <div class="card white z-depth-2">
+            <h6 id="status" class="center-align"></h6>
+            <h5 id="question" class="center-align"></h5>
+
+            <button id="buzzBtn" onclick="buzz()" class="btn hide-on-small-only waves-effect waves-light green">Buzz!</button>
+            
+            <div class="fixed-action-btn hide-on-med-and-up" style="left: 80px;bottom: 20px;bottom: 23px;width: 286px;">
+                <button onclick="buzz()" style="width: 100%;border-radius: 25px; " class="btn show-on-small-only waves-effect waves-light green">Buzz!</button>
+            </div>
+
+            <div id="answerArea" class="input-field" style="display:none;">
+                <input type="text" autofocus="true" id="answerInput" onkeypress="submitAnswerOnEnter(event)" placeholder="Your answer" />
+                <button class="btn-flat input-style-btn" onclick="submitAnswer()" id="" style="margin: 0;">
+                    <i class="material-icons" style="color: orange;">send</i>
+                </button>
+            </div>
+
+            <p id="result" class="center-align red-text"></p>
+
+            <!-- Chat UI -->
+            <div class="chat-box" id="chatBox"></div>
+
+            <!-- Chat Input with Emoji -->
+                <div class="send-chat">
+                    <div class="input-field">
+                        <input type="text" id="chatInput" onkeypress="sendMessageOnEnter(event)">
+                        <label for="chatInput" class="">Say something...</label>
+
+                        <!-- Emoji Picker Trigger -->
+                        <div class="emoji-picker-container">
+                            <input type="text" data-emojiable="true" class="hide">
+                        </div>
+                        <button class="btn-flat input-style-btn emoji-btn" id="" title="Add emoji" style="margin: 0;">
+                        <i class="material-icons">emoji_emotions</i>
+                        </button>
+                        <!-- Send icon button -->
+                        <button class="btn-flat input-style-btn sendmsg" onclick="sendChat()" aria-label="Send" title="Send">
+                            <i class="material-icons">send</i>
+                        </button>
+                    </div>
+                </div>
+        
 
         </div>
     </div>
@@ -203,7 +234,7 @@
                     title="Leave Game" aria-label="Leave Game">
             <i class="material-icons">exit_to_app</i> Leave Game
         </button>
-         <div class="fixed-action-btn" style="left: 5px;bottom: 20px; bottom: 23px;width: 100px;">
+         <div class="fixed-action-btn" style="left: 2px;bottom: 20px; bottom: 23px;width: 100px;">
             <a class="btn-floating waves-effect waves-light blue modal-trigger" href="#modal1"><i class="material-icons">help_outline</i></a>
           </div>
 
