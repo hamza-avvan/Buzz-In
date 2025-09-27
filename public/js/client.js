@@ -21,6 +21,8 @@ let playerStats = {
   // Update the matchStart handler
   socket.on("matchStart", (data) => {
     playStartSound();
+    
+    
     console.log(data)
     document.getElementById("status").innerText = "Match started vs " + data.opponent;
     document.getElementById("statsArea").style.display = "block";
@@ -150,8 +152,12 @@ socket.on("chat", (data) => {
   });
 
 function quitGame() {
-  socket.disconnect();
-  location.reload();
+  window.onbeforeunload = null;
+  const sure = confirm("Are you sure you want to reload? You'll lose the session and the match.");
+  if (sure) {
+    socket.disconnect();
+    location.reload();
+  } 
 }
 
 // Receive lobby message
@@ -185,8 +191,23 @@ socket.on("yourTurn", () => {
 
 // Game over
 socket.on("gameOver", (data) => {
+  if (data.winner==currentUsername) {
+    data.winner = 'You'
+    confettiRain()
+    playWinSound()
+  } else {
+    playLoseSound()
+  }
+
+  currentUsername = "";
   document.getElementById("status").innerText = `Game Over! Winner: ${data.winner}`;
   document.getElementById("answerArea").style.display = "none";
+
+  window.onbeforeunload = null;
+
+  setTimeout(function() {
+    location.reload()
+  }, 5000)
 });
 
 // Buzz button click
@@ -256,9 +277,59 @@ function playWrongSound() {
 }
 
 function playBuzzSound() {
-    const sound = document.getElementById('buzzSound');
+  const sound = document.getElementById('buzzSound');
+  sound.currentTime = 0;
+  sound.play().catch(e => console.log("Audio play failed:", e));
+}
+
+function playWinSound() {
+    const sound = document.getElementById('winSound');
     sound.currentTime = 0;
     sound.play().catch(e => console.log("Audio play failed:", e));
+}
+
+function playLoseSound() {
+    const sound = document.getElementById('loseSound');
+    sound.currentTime = 0;
+    sound.play().catch(e => console.log("Audio play failed:", e));
+}
+
+const myCanvas = document.createElement('canvas');
+myCanvas.style.position = 'fixed';
+myCanvas.style.top = '0';
+myCanvas.style.left = '0';
+myCanvas.style.width = '100%';
+myCanvas.style.height = '100%';
+myCanvas.style.pointerEvents = 'none'; // so it doesn't block clicks
+myCanvas.style.zIndex = '9999';
+document.body.appendChild(myCanvas);
+
+const confettiInstance = confetti.create(myCanvas, {
+  resize: true,   // make it full-screen & auto-resize
+  useWorker: true // better performance
+});
+
+function confettiRain() {
+  const duration = 5 * 1000; // how long to keep spawning
+  const animationEnd = Date.now() + duration;
+
+  (function frame() {
+    confettiInstance({
+      particleCount: 5,
+      angle: 90,             // straight down
+      spread: 45,
+      startVelocity: 30,
+      gravity: 0.8,          // slower fall (default 1)
+      ticks: 400,            // live longer
+      shapes: ['square'],    // looks more like ribbons
+      scalar: 1.2,           // a bit bigger
+      origin: { x: Math.random(), y: 0 }
+    });
+
+    if (Date.now() < animationEnd) {
+      requestAnimationFrame(frame);
+    }
+  }());
 }
 
 window.onbeforeunload = function() {
