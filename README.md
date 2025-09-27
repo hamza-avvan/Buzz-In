@@ -49,12 +49,8 @@ Real-time multiplayer quiz game with buzzer system built with:
     # 2. Install dependencies
     npm install
     
-    # 3. Add sound files (optional)
-    mkdir -p public/sounds
-    cp path/to/sounds/* public/sounds/
-    
     # 4. Start server
-    node server.js
+    npm start
 
 🎮 Gameplay
 -----------
