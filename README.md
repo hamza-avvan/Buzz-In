@@ -19,6 +19,7 @@
 
 Real-time multiplayer quiz game with buzzer system built with:
 
+[![Javascript Project Buzz In Multiplayer](https://raw.githubusercontent.com/hamza-avvan/Buzz-In/refs/heads/main/docs/cover.png)](https://www.youtube.com/watch?v=pybLwA9MynM)
 
 
 🚀 Features
