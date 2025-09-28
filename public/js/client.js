@@ -180,7 +180,7 @@ socket.on("buzzed", (name) => {
 
   if (name != currentUsername) {
     playBuzzSound()
-    M.toast({ html: `<strong>${name}</strong> buzzed before you. Better luck next time`, classes: "orange" })
+    M.toast({ html: `${name}🐝 buzzed before you. Better luck next time`, classes: "orange" })
   }
 });
 
@@ -207,7 +207,7 @@ socket.on("gameOver", (data) => {
 
   setTimeout(function() {
     location.reload()
-  }, 5000)
+  }, 15000)
 });
 
 // Buzz button click
